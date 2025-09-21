@@ -98,18 +98,15 @@ nav a:hover {
 .descripcion {
   padding: 60px 20px;
   text-align: center;
-  background: linear-gradient(90deg, #2e003f, #5a189a);
-  border-bottom: 3px solid #a64dff;
+  background: linear-gradient(90deg, #1a001f, #2a002d); /* Fondo oscuro mejorado */
+  border-radius: 15px;
+  border: 2px solid #4b0082;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  margin: 30px auto;
+  max-width: 1000px;
+  color: #fff;
   opacity: 0;
   transition: opacity 1s ease-in-out 1s;
-}
-
-.descripcion p {
-  font-size: 1.5rem;
-  margin: 0 auto;
-  max-width: 900px;
-  color: #fff;
-  line-height: 1.6;
 }
 
 /* CARDS */

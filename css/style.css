@@ -18,7 +18,7 @@ header h1 { color: #fff; text-shadow: 0 0 15px rgba(166,77,255,0.5); font-size: 
 header p { color: #cbb2ff; font-size: 1.3rem; margin-top: 15px; }
 
 /* NAV */
-nav { display: flex; justify-content: center; background: linear-gradient(90deg, #1a001f, #2e003f); padding: 14px; position: sticky; top:0; z-index:1000; }
+nav { display:flex; justify-content:center; background:linear-gradient(90deg,#1a001f,#2e003f); padding:14px; position:sticky; top:0; z-index:1000; }
 nav a { color:#fff; margin:0 20px; font-weight:bold; text-decoration:none; transition:0.3s; }
 nav a:hover { color:#cba6ff; }
 

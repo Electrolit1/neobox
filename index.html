@@ -19,7 +19,7 @@
     </p>
   </div>
 
-  <!-- BANNER DE ANUNCIO FLOTANTE -->
+  <!-- BANNER FLOTANTE -->
   <div id="announcementBanner">
     ⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡
     <span id="closeBanner">&times;</span>
@@ -89,24 +89,28 @@
     © 2025 NeoBox - Todos los derechos reservados
   </footer>
 
-  <!-- ALERTA -->
   <div id="copyAlert">✅ IP copiada</div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Simular progreso de carga estilo Minecraft
       let progress = 0;
       const progressBar = document.getElementById("progressBar");
+      const loader = document.getElementById("loader");
 
-      let interval = setInterval(() => {
+      // Animación del progreso
+      const interval = setInterval(() => {
         progress += Math.random() * 5;
         if(progress > 100) progress = 100;
         progressBar.style.width = progress + "%";
-        if(progress === 100){
+
+        if(progress >= 100){
           clearInterval(interval);
           setTimeout(() => {
-            document.getElementById("loader").style.display = "none";
-            document.body.style.opacity = 1;
+            loader.style.opacity = 0;
+            loader.style.transition = "opacity 0.5s ease";
+            setTimeout(() => {
+              loader.style.display = "none";
+            }, 500);
           }, 500);
         }
       }, 100);
@@ -114,11 +118,9 @@
       // Copiar IP
       function copyIP() {
         navigator.clipboard.writeText("neobox.lol").then(() => {
-          let alertBox = document.getElementById("copyAlert");
+          const alertBox = document.getElementById("copyAlert");
           alertBox.style.display = "block";
-          setTimeout(() => {
-            alertBox.style.display = "none";
-          }, 2000);
+          setTimeout(() => alertBox.style.display = "none", 2000);
         });
       }
       window.copyIP = copyIP;

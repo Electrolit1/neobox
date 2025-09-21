@@ -1,75 +1,32 @@
-/* BODY */
+/* ============================= */
+/*        GENERAL STYLES         */
+/* ============================= */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0a0a0a;
   color: #fff;
-  overflow-x: hidden;
 }
 
-/* LOADER estilo Minecraft */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0a0a0a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-#loader h2 {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  text-shadow: 0 0 8px #cbb2ff;
-  letter-spacing: 2px;
-}
-
-#progressContainer {
-  width: 80%;
-  max-width: 500px;
-  height: 25px;
-  background: #2e003f;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 2px solid #a64dff;
-}
-
-#progressBar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #a64dff, #6a0dad);
-  transition: width 0.2s;
-}
-
-/* HEADER */
 header {
   background: linear-gradient(135deg, #2e003f, #4b0082);
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
 }
 
 header h1 {
   margin: 0;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #fff;
-  text-shadow: 0px 0px 20px rgba(166,77,255,0.6);
+  text-shadow: 0px 0px 15px rgba(166,77,255,0.5);
 }
 
 header p {
   margin: 15px 0 0;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #cbb2ff;
 }
 
-/* NAV */
 nav {
   display: flex;
   justify-content: center;
@@ -78,8 +35,6 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  opacity: 0;
-  transition: opacity 1s ease-in-out 0.5s;
 }
 
 nav a {
@@ -94,29 +49,54 @@ nav a:hover {
   color: #cba6ff;
 }
 
-/* DESCRIPCIÓN */
+/* ============================= */
+/*       DESCRIPCIÓN INICIO      */
+/* ============================= */
 .descripcion {
   padding: 60px 20px;
   text-align: center;
-  background: linear-gradient(90deg, #1a001f, #2a002d); /* Fondo oscuro mejorado */
-  border-radius: 15px;
-  border: 2px solid #4b0082;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-  margin: 30px auto;
-  max-width: 1000px;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 1s ease-in-out 1s;
+  background: #0d0d0d; /* fondo oscuro */
+  border-bottom: 3px solid #a64dff;
 }
 
-/* CARDS */
+.descripcion p {
+  font-size: 1.5rem;
+  margin: 0 auto;
+  max-width: 900px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.cta {
+  margin-top: 25px;
+}
+
+.cta button {
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #a64dff, #6a0dad);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 12px rgba(166,77,255,0.6);
+  font-size: 1rem;
+}
+
+.cta button:hover {
+  background: linear-gradient(90deg, #6a0dad, #a64dff);
+  box-shadow: 0px 0px 18px rgba(166,77,255,0.9);
+}
+
+/* ============================= */
+/*             CARDS             */
+/* ============================= */
 .contenedor {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   padding: 60px;
-  opacity: 0;
-  transition: opacity 1s ease-in-out 1.5s;
 }
 
 .card {
@@ -142,13 +122,13 @@ nav a:hover {
   color: #d4bfff;
 }
 
-/* SECCIONES INFO */
+/* ============================= */
+/*         SECCIONES INFO        */
+/* ============================= */
 section.info {
   padding: 70px 20px;
   text-align: center;
   background: linear-gradient(135deg, #0f0f0f, #1a001f);
-  opacity: 0;
-  transition: opacity 1s ease-in-out 2s;
 }
 
 section.info h2 {
@@ -166,30 +146,21 @@ section.info p {
   line-height: 1.6;
 }
 
-/* BOTÓN CALL TO ACTION */
-.cta {
-  margin-top: 25px;
+/* ============================= */
+/*           FOOTER              */
+/* ============================= */
+footer {
+  background: linear-gradient(90deg, #1a001f, #2e003f);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #d9b3ff;
 }
 
-.cta button {
-  padding: 14px 28px;
-  background: linear-gradient(90deg, #a64dff, #6a0dad);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0px 0px 12px rgba(166,77,255,0.6);
-  font-size: 1rem;
-}
-
-.cta button:hover {
-  background: linear-gradient(90deg, #6a0dad, #a64dff);
-  box-shadow: 0px 0px 18px rgba(166,77,255,0.9);
-}
-
-/* AVISO COPIADO */
+/* ============================= */
+/*         ALERTA COPIADO        */
+/* ============================= */
 #copyAlert {
   display: none;
   position: fixed;
@@ -211,14 +182,57 @@ section.info p {
   100% {opacity: 0; transform: translateY(20px);}
 }
 
-/* FOOTER */
-footer {
-  background: linear-gradient(90deg, #1a001f, #2e003f);
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #d9b3ff;
-  opacity: 0;
-  transition: opacity 1s ease-in-out 2.5s;
+/* ============================= */
+/*        LOADER ESTILO MC       */
+/* ============================= */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 30px;
+  animation: floatLogo 2s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+#loader h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px #cbb2ff;
+  letter-spacing: 2px;
+}
+
+#progressContainer {
+  width: 80%;
+  max-width: 500px;
+  height: 25px;
+  background: #2e003f;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid #a64dff;
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #a64dff, #6a0dad);
+  transition: width 0.2s;
 }

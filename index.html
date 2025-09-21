@@ -15,7 +15,8 @@
       <div id="progressBar"></div>
     </div>
     <p id="loader-announcement">
-⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡</p>
+      ⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡
+    </p>
   </div>
 
   <!-- BANNER DE ANUNCIO FLOTANTE -->
@@ -92,37 +93,40 @@
   <div id="copyAlert">✅ IP copiada</div>
 
   <script>
-    // Simular progreso de carga estilo Minecraft
-    let progress = 0;
-    const progressBar = document.getElementById("progressBar");
+    document.addEventListener("DOMContentLoaded", () => {
+      // Simular progreso de carga estilo Minecraft
+      let progress = 0;
+      const progressBar = document.getElementById("progressBar");
 
-    let interval = setInterval(() => {
-      progress += Math.random() * 5;
-      if(progress > 100) progress = 100;
-      progressBar.style.width = progress + "%";
-      if(progress === 100){
-        clearInterval(interval);
-        setTimeout(() => {
-          document.getElementById("loader").style.display = "none";
-          document.body.style.opacity = 1;
-        }, 500);
+      let interval = setInterval(() => {
+        progress += Math.random() * 5;
+        if(progress > 100) progress = 100;
+        progressBar.style.width = progress + "%";
+        if(progress === 100){
+          clearInterval(interval);
+          setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+            document.body.style.opacity = 1;
+          }, 500);
+        }
+      }, 100);
+
+      // Copiar IP
+      function copyIP() {
+        navigator.clipboard.writeText("neobox.lol").then(() => {
+          let alertBox = document.getElementById("copyAlert");
+          alertBox.style.display = "block";
+          setTimeout(() => {
+            alertBox.style.display = "none";
+          }, 2000);
+        });
       }
-    }, 100);
+      window.copyIP = copyIP;
 
-    // Copiar IP
-    function copyIP() {
-      navigator.clipboard.writeText("neobox.lol").then(() => {
-        let alertBox = document.getElementById("copyAlert");
-        alertBox.style.display = "block";
-        setTimeout(() => {
-          alertBox.style.display = "none";
-        }, 2000);
+      // Cerrar banner
+      document.getElementById("closeBanner").addEventListener("click", () => {
+        document.getElementById("announcementBanner").style.display = "none";
       });
-    }
-
-    // Cerrar banner
-    document.getElementById("closeBanner").addEventListener("click", () => {
-      document.getElementById("announcementBanner").style.display = "none";
     });
   </script>
 </body>

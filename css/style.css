@@ -236,3 +236,20 @@ footer {
   background: linear-gradient(90deg, #a64dff, #6a0dad);
   transition: width 0.2s;
 }
+
+/* Mensaje de anuncio en loader */
+#loader-announcement {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 0 0 6px #cbb2ff;
+}
+
+/* Mensaje de anuncio en la web */
+.announcement {
+  color: #cbb2ff;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 20px;
+}

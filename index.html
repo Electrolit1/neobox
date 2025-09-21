@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- BANNER DE ANUNCIO FLOTANTE -->
+  <div id="announcementBanner">
+    ⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡
+    <span id="closeBanner">&times;</span>
+  </div>
+
   <!-- LOADER estilo Minecraft -->
   <div id="loader">
     <img src="css/logo.png" alt="NeoBox Logo" class="loader-logo">
@@ -15,7 +21,8 @@
       <div id="progressBar"></div>
     </div>
     <p id="loader-announcement">
-⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡</p>
+      ⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡
+    </p>
   </div>
 
   <header>
@@ -38,7 +45,6 @@
     <div class="cta">
       <button onclick="copyIP()">🚀 ¡Unirme ahora!</button>
     </div>
-    <p class="announcement">⚡ Próximamente mejoraremos nuestra web para una experiencia aún más increíble ⚡</p>
   </section>
 
   <section id="modalidades" class="contenedor">
@@ -83,7 +89,7 @@
     © 2025 NeoBox - Todos los derechos reservados
   </footer>
 
-  <!-- ALERTA -->
+  <!-- ALERTA COPIADO -->
   <div id="copyAlert">✅ IP copiada</div>
 
   <script>
@@ -92,7 +98,7 @@
     const progressBar = document.getElementById("progressBar");
 
     let interval = setInterval(() => {
-      progress += Math.random() * 5; // progreso aleatorio
+      progress += Math.random() * 5;
       if(progress > 100) progress = 100;
       progressBar.style.width = progress + "%";
       if(progress === 100){
@@ -115,6 +121,11 @@
         }, 2000);
       });
     }
+
+    // Cerrar banner de anuncio
+    document.getElementById('closeBanner').addEventListener('click', function(){
+      document.getElementById('announcementBanner').style.display = 'none';
+    });
   </script>
 </body>
 </html>

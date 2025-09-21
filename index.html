@@ -97,15 +97,14 @@
     const progressBar = document.getElementById("progressBar");
 
     let interval = setInterval(() => {
-      progress += Math.random() * 5; // progreso aleatorio
+      progress += Math.random() * 5;
       if(progress > 100) progress = 100;
       progressBar.style.width = progress + "%";
       if(progress === 100){
         clearInterval(interval);
         setTimeout(() => {
           document.getElementById("loader").style.display = "none";
-          document.querySelectorAll("header, nav, .descripcion, .contenedor, section.info, footer")
-            .forEach(el => el.style.opacity = 1);
+          document.body.style.opacity = 1;
         }, 500);
       }
     }, 100);
